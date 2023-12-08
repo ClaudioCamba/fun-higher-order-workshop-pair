@@ -79,9 +79,29 @@ function composeU(func1, func2) {
   return unary;
 }
 
-function composeB() {}
+function composeB(func1,func2) {
+  function runTwofunc(arg1,arg2,arg3){
+    return func2(func1(arg1,arg2),arg3);
+  }
+  return runTwofunc
+}
 
-function limit() {}
+function limit(func,num) {
+  let count = 0;
+
+    function limiRun(arg1,arg2){
+      if (count < num){
+        count++;
+        return func(arg1,arg2);
+      }
+    }
+
+  return limiRun;
+}
+
+// const add_ltd = limit(add, 1);
+// add_ltd(3, 4); // 7
+// add_ltd(3, 5); // undefined
 
 function from() {}
 
