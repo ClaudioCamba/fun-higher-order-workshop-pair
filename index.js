@@ -111,23 +111,14 @@ function from(num) {
 }
 
 function to(func, num) {
-  function runFunc (arg){
-    console.log(func(arg));
-    if (func(arg) < num){
-      return func(arg);
+  function runFunc (){
+    const executed = func();
+    if (executed < num){
+      return executed;
     }
   }
   return runFunc;
 }
-
-/*
-Write a to function that takes a generator and an end value, and returns a generator that will produce numbers up to that limit (not inclusive).
-
-const index = to(from(1), 3);
-index(); // 1
-index(); // 2
-index(); // undefined
-*/
 
 function fromTo() {}
 
