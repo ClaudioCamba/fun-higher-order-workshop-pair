@@ -10,13 +10,21 @@ function identityF(arg) {
   return id;
 }
 
-function add() {}
+function add(num1, num2) {
+  return num1 + num2;
+}
 
-function subtract() {}
+function subtract(num1, num2) {
+  return num1 - num2;
+}
 
-function multiply() {}
+function multiply(num1, num2) {
+  return num1 * num2;
+}
 
-function increment() {}
+function increment(num) {
+  return add(num, 1);
+}
 
 function addF() {}
 
