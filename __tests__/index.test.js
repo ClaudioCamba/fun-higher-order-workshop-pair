@@ -8,6 +8,7 @@ const {
   addF,
   curry,
   liftF,
+  once,
   twice,
   composeU,
   composeB,
@@ -123,11 +124,16 @@ describe('Higher Order Functions', () => {
     });
   });
 
-  //  describe('once', () => {
-  //    it('Add your first test here...', () => {
-  //      // Write your own tests for once
-  //    })
-  //  })
+   describe.only('once', () => {
+     it('it should return a function', () => {
+       // Write your own tests for once
+       expect(typeof once(add(1,1))).toBe('function');
+     });
+     it('it should return a function', () => {
+      // Write your own tests for once
+      expect(typeof once(add(1,1))).toBe('function');
+    })
+   })
 
   describe('Unary Functions', () => {
     describe('twice', () => {

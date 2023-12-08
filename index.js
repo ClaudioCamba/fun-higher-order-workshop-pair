@@ -40,7 +40,22 @@ function curry(func, num) {
   return applyFunc;
 }
 
-function liftF() {}
+function liftF(func) {
+  function applyFunc(num1){
+    function newFunc(num2){
+      return func(num1,num2)
+    };
+    return newFunc;
+  }
+  return applyFunc;
+}
+
+function once(func){
+  function runFunc (arg){
+    return func(arg);
+  }
+  return runFunc;
+}
 
 function twice() {}
 
@@ -84,6 +99,7 @@ module.exports = {
   addF,
   curry,
   liftF,
+  once,
   twice,
   composeU,
   composeB,
