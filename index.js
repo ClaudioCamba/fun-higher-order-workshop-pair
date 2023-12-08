@@ -1,3 +1,5 @@
+const { call } = require("function-bind");
+
 function identity(arg) {
   return arg;
 }
@@ -99,13 +101,33 @@ function limit(func,num) {
   return limiRun;
 }
 
-// const add_ltd = limit(add, 1);
-// add_ltd(3, 4); // 7
-// add_ltd(3, 5); // undefined
+function from(num) {
+  let start = num-1;
+  function goingUp (){
+    start = increment(start);
+    return start;
+  }
+  return goingUp;
+}
 
-function from() {}
+function to(func, num) {
+  function runFunc (arg){
+    console.log(func(arg));
+    if (func(arg) < num){
+      return func(arg);
+    }
+  }
+  return runFunc;
+}
 
-function to() {}
+/*
+Write a to function that takes a generator and an end value, and returns a generator that will produce numbers up to that limit (not inclusive).
+
+const index = to(from(1), 3);
+index(); // 1
+index(); // 2
+index(); // undefined
+*/
 
 function fromTo() {}
 
