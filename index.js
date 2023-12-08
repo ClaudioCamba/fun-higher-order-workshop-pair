@@ -26,7 +26,14 @@ function increment(num) {
   return add(num, 1);
 }
 
-function addF() {}
+function addF(num) {
+
+    function accumalate (val) {
+      return num + val;
+    }
+
+  return accumalate;
+}
 
 function curry() {}
 
