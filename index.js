@@ -27,15 +27,18 @@ function increment(num) {
 }
 
 function addF(num) {
-
     function accumalate (val) {
       return num + val;
     }
-
   return accumalate;
 }
 
-function curry() {}
+function curry(func, num) {
+  function applyFunc(arg){
+    return func(num,arg);
+  };
+  return applyFunc;
+}
 
 function liftF() {}
 
