@@ -51,9 +51,17 @@ function liftF(func) {
 }
 
 function once(func){
-  function runFunc (arg){
-    return func(arg);
-  }
+  let result = false;
+
+    function runFunc (arg){
+      if (result === false){
+        result = func(arg);
+        return result;
+      } else {
+        return result;
+      }
+    }
+
   return runFunc;
 }
 

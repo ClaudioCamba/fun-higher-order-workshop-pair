@@ -129,9 +129,18 @@ describe('Higher Order Functions', () => {
        // Write your own tests for once
        expect(typeof once(add(1,1))).toBe('function');
      });
-     it('it should return a function', () => {
+     it('It should return Hi when indentity is passed', () => {
       // Write your own tests for once
-      expect(typeof once(add(1,1))).toBe('function');
+      const runFunc = once(identity);
+      const outOne = runFunc('Hi');
+      expect(outOne).toEqual('Hi');
+    })
+    it('It should return 6 because it is only running once', () => {
+      // Write your own tests for once
+      const runFunc = once(increment);
+      runFunc(5);
+      runFunc(1);
+      expect(runFunc(1)).toEqual(6);
     })
    })
 
