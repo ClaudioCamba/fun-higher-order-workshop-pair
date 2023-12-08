@@ -1,6 +1,14 @@
-function identity() {}
+function identity(arg) {
+  return arg;
+}
 
-function identityF() {}
+function identityF(arg) {
+  function id() {
+    const outerArg = arg
+    return outerArg;
+  }
+  return id;
+}
 
 function add() {}
 
