@@ -65,9 +65,19 @@ function once(func){
   return runFunc;
 }
 
-function twice() {}
+function twice(func) {
+  function doubleFunc(arg){
+    return func(arg, arg);
+  };
+  return doubleFunc;
+}
 
-function composeU() {}
+function composeU(func1, func2) {
+  function unary (arg) {
+    return func2(func1(arg));
+  };
+  return unary;
+}
 
 function composeB() {}
 

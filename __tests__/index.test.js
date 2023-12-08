@@ -124,7 +124,7 @@ describe('Higher Order Functions', () => {
     });
   });
 
-   describe.only('once', () => {
+   describe('once', () => {
      it('it should return a function', () => {
        // Write your own tests for once
        expect(typeof once(add(1,1))).toBe('function');
@@ -155,7 +155,7 @@ describe('Higher Order Functions', () => {
         expect(double(3)).toBe(add(3, 3));
       });
     });
-    describe('composeU', () => {
+    describe.only('composeU', () => {
       it('returns a function on first invocation', () => {
         const add100 = (x) => x + 100;
         const add50 = (x) => x + 50;
